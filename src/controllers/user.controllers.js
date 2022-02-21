@@ -107,8 +107,9 @@ module.exports = {
             secret,
             )
             const userid = verificaEmail._id;
+            const email = verificaEmail.email_user;
 
-           //res.status(200).json({msg:'Autentificação realizada com sucesso', token, userid})
+           res.status(200).json({msg:'Autentificação realizada com sucesso', token, userid, email})
 
         }catch(err){
 
@@ -132,7 +133,7 @@ module.exports = {
             return res.status(299).json({msg:'Usuario não encontrado'})
         }
         
-       res.status(200).json({user})
+       //res.status(200).json({user})
     },
 
 
@@ -158,18 +159,29 @@ module.exports = {
                     const userid = verificaEmail._id;
 
                     // req.userid = decoded.id;
-                   res.json({msg:"VALIDADO ARROBADO"})
+                  res.json({msg:"VALIDADO ARROBADO"})
                     next();
                 }
             })
-            // jwt.verify(token, secret)
-
-            // next()
+           
 
 
         }catch(error){
-            res.status(400).json({msg:"TOKEN INVÁLIDO SAFADO"})
-            next();
+            jwt.verify(authHearder, secret,(err)=>{
+                if(err){
+
+                    res.json({auth:false, message:"FALHA NAaaa AUTENTI"});
+                
+                }else{
+                    
+
+                    // req.userid = decoded.id;
+                  res.json({msg:"VALIDADO ARROBADO"})
+                    next();
+                }
+            })
+            // res.status(400).json({msg:"token invalido"})
+            // next();
         }
     
     }
