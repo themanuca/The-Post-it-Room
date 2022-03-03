@@ -2,6 +2,7 @@ const express = require('express');
 const { route } = require('express/lib/application');
 const PostIt = require('./controllers/post.controllers');
 const User = require('./controllers/user.controllers');
+const User_post = require('./controllers/user_post.controllers');
 const routes = express.Router();
 
 routes.get('/', PostIt.index);
@@ -17,7 +18,7 @@ routes.post('/api/register', User.create);
 routes.post('/api/user/login',User.login);
 
 //Rota privada para logados
-routes.get('/dashboard/:id',User.checartoke, User.dash);
-
-
+//routes.get('/dashboard/:id',User.checartoke, User.dash);
+routes.post('/dashboard/user/auth/post', User_post.create);
+routes.post('/dashboard/user/auth/', User_post.index)
 module.exports = routes;

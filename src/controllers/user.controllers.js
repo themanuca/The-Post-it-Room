@@ -89,7 +89,7 @@ module.exports = {
         }
         
         //checar senha
-
+        
         const checaSenha = await bcrypt.compare(senha_user, verificaEmail.senha_user)
         
         if(!checaSenha){
