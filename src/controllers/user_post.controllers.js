@@ -13,8 +13,8 @@ module.exports = {
 
         let data = {};
         
-        data = {post_texto,post_cor, post_id}
-
+        data =  {post_texto,post_cor, post_id}
+      
         let post = await User_post.create(data);
 
         return res.status(200).json(post);
