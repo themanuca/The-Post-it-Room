@@ -5,11 +5,11 @@ const User = require('./controllers/user.controllers');
 const User_post = require('./controllers/user_post.controllers');
 const routes = express.Router();
 
-routes.get('/', PostIt.index);
+routes.get('', PostIt.index);
 
 
 //Rota de Postagem no muro públic
-routes.post('/api/post',PostIt.create);
+routes.post('api/post',PostIt.create);
 
 //Rota de registro de usuario
 routes.post('/api/register', User.create);
