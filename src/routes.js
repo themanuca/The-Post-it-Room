@@ -7,7 +7,9 @@ const routes = express.Router();
 
 routes.get('/', PostIt.index);
 
-
+routes.get('/', function(req, res, next) {
+    res.render('index', { title: 'Express' });
+  });
 //Rota de Postagem no muro públic
 routes.post('/post',PostIt.create);
 
