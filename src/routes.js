@@ -5,7 +5,7 @@ const User = require('./controllers/user.controllers');
 const User_post = require('./controllers/user_post.controllers');
 const routes = express.Router();
 
-routes.get('', PostIt.index);
+routes.get('/', PostIt.index);
 
 
 //Rota de Postagem no muro públic
