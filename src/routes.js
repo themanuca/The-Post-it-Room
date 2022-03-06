@@ -12,7 +12,7 @@ routes.get('/', PostIt.index);
 routes.post('/post',PostIt.create);
 
 //Rota de registro de usuario
-routes.post('/api/register', User.create);
+routes.post('/user/register', User.create);
 
 //Rota de login de usuario
 routes.post('/user/login',User.login);
