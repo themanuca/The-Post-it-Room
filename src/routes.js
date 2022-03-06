@@ -9,7 +9,7 @@ routes.get('/', PostIt.index);
 
 
 //Rota de Postagem no muro públic
-routes.post('/api/post',PostIt.create);
+routes.post('/post',PostIt.create);
 
 //Rota de registro de usuario
 routes.post('/api/register', User.create);

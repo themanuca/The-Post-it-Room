@@ -7,14 +7,20 @@ module.exports = {
     },
 
     async create(req, res){
-        const {post_texto,post_cor} = req.body;
+        try{    
+            const {post_texto,post_cor} = req.body;
 
-        let data = {};
-        
-        data = {post_texto,post_cor}
+            let data = {};
+            
+            data = {post_texto,post_cor}
+    
+            let post = await PostIt.create(data);
+    
+            return res.status(200).json(post);
 
-        let post = await PostIt.create(data);
-
-        return res.status(200).json(post);
+        }catch(error){
+            return res.status(150).json(error+ " não foi");
+        }
+       
     }
 }
