@@ -22,5 +22,11 @@ module.exports = {
             return res.status(150).json(error+ " não foi");
         }
        
+    },
+
+    teste(req, res){
+
+        return res.status(200).json({msg:"ROTA ACESSADA"})
     }
+
 }
