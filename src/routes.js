@@ -7,7 +7,7 @@ const routes = express.Router();
 
 routes.get('/', PostIt.index);
 
-routes.get('/teste', PostIt.teste);
+//routes.get('/teste', PostIt.teste);
 //Rota de Postagem no muro públic
 routes.post('/post',PostIt.create);
 
@@ -15,7 +15,7 @@ routes.post('/post',PostIt.create);
 routes.post('/api/register', User.create);
 
 //Rota de login de usuario
-routes.post('/api/user/login',User.login);
+routes.post('/user/login',User.login);
 
 //Rota privada para logados
 //routes.get('/dashboard/:id',User.checartoke, User.dash);
