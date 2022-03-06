@@ -12,13 +12,13 @@ routes.get('', PostIt.index);
 routes.post('api/post',PostIt.create);
 
 //Rota de registro de usuario
-routes.post('/api/register', User.create);
+routes.post('api/register', User.create);
 
 //Rota de login de usuario
-routes.post('/api/user/login',User.login);
+routes.post('api/user/login',User.login);
 
 //Rota privada para logados
 //routes.get('/dashboard/:id',User.checartoke, User.dash);
-routes.post('/dashboard/user/auth/post', User_post.create);
-routes.post('/dashboard/user/auth/', User_post.index)
+routes.post('dashboard/user/auth/post', User_post.create);
+routes.post('dashboard/user/auth/', User_post.index)
 module.exports = routes;
